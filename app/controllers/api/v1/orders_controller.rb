@@ -22,5 +22,4 @@ class Api::V1::OrdersController < ApplicationController
       render json: { errors: order.errors }, status: 422
     end
   end
-
 end
