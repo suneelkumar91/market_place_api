@@ -23,7 +23,7 @@ SabisuRails.setup do |config|
   # config.layout = "sabisu"
 
   # Resources on the api
-  config.resources = [:users]
+  config.resources = [:users, :products]
   
   # Default resource
    config.default_resource = :users
