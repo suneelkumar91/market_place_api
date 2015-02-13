@@ -13,6 +13,7 @@ MarketPlaceApi::Application.routes.draw do
       end
       resources :sessions, :only => [:create, :destroy]
       resources :products, :only => [:index, :show]
+      resources :orders, :only => [:index, :show]
     end
   end
 
