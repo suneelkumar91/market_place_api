@@ -4,6 +4,9 @@ class Product < ActiveRecord::Base
                     presence: true
 
   belongs_to :user
+  has_many :placements
+  has_many :orders, through: :placements
+  
   scope :filter_by_title, lambda { |keyword| where("lower(title) LIKE ?", "%#{keyword.downcase}%" ) }
   scope :above_or_equal_to_price, lambda { |price| where("price >= ?", price) }
   scope :below_or_equal_to_price, lambda { |price| where("price <= ?", price) }
@@ -20,5 +23,5 @@ class Product < ActiveRecord::Base
 
     products
   end
-  
+
 end
