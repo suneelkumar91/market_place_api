@@ -14,11 +14,13 @@ class Order < ActiveRecord::Base
   	self.total = products.map(&:price).sum
   end
 
+
   def build_placements_with_product_ids_and_quantities(product_ids_and_quantities)
     product_ids_and_quantities.each do |product_id_and_quantity|
       id, quantity = product_id_and_quantity # [1,5]
 
-      self.placements.build(product_id: id)
+      self.placements.build(product_id: id, quantity: quantity)
     end
   end
+
 end
